@@ -6,13 +6,13 @@
 
 ## Legend
 
-| Symbol | Meaning |
-|--------|---------|
-| P0 | Critical — blocks release if failing |
-| P1 | High priority — tested on every build |
-| P2 | Medium priority — regression / nightly |
-| ✅ | Automated test exists |
-| 📋 | Manual only |
+| Symbol | Meaning                                |
+| ------ | -------------------------------------- |
+| P0     | Critical — blocks release if failing   |
+| P1     | High priority — tested on every build  |
+| P2     | Medium priority — regression / nightly |
+| ✅     | Automated test exists                  |
+| 📋     | Manual only                            |
 
 ---
 
@@ -21,6 +21,7 @@
 ### TC-NAV-01 — Capabilities menu expands to show Shifts `P0` 📋
 
 **Steps:**
+
 1. Log in to the application.
 2. Click the **Capabilities** tab in the sidebar.
 
@@ -31,6 +32,7 @@
 ### TC-NAV-02 — Navigate to Shifts page `P0` 📋
 
 **Steps:**
+
 1. Expand the Capabilities menu.
 2. Click **Shifts**.
 
@@ -38,12 +40,12 @@
 
 ---
 
-
 ## 2. Shift — Create
 
 ### TC-SHF-CREATE-01 — Create a shift `P0` ✅
 
 **Steps:**
+
 1. Navigate to Shifts.
 2. Click the **+** (add shift) button.
 3. Fill in: Title, Description, Shift Type, Resources, Date, Start Time, End Time.
@@ -56,6 +58,7 @@
 ### TC-SHF-CREATE-02 — Save with missing required fields shows validation `P1` 📋
 
 **Steps:**
+
 1. Navigate to Shifts.
 2. Click the **+** button.
 3. Leave all required fields empty.
@@ -68,6 +71,7 @@
 ### TC-SHF-CREATE-03 — Cancel creating a shift discards the form `P1` 📋
 
 **Steps:**
+
 1. Navigate to Shifts.
 2. Click the **+** button.
 3. Fill in some fields.
@@ -82,6 +86,7 @@
 ### TC-SHF-EDIT-01 — Edit an existing shift's type `P0` ✅
 
 **Steps:**
+
 1. Navigate to Shifts.
 2. Double-click an existing shift event on the calendar.
 3. Change the **Shift Type** via the dropdown.
@@ -94,6 +99,7 @@
 ### TC-SHF-EDIT-02 — Edit an existing shift's time range `P1` 📋
 
 **Steps:**
+
 1. Double-click an existing shift event.
 2. Change Start Time and/or End Time.
 3. Click **Save**.
@@ -105,6 +111,7 @@
 ### TC-SHF-EDIT-03 — Cancel editing a shift discards changes `P1` 📋
 
 **Steps:**
+
 1. Double-click an existing shift event.
 2. Modify any field.
 3. Close the edit drawer without saving.
@@ -118,6 +125,7 @@
 ### TC-SHF-DELETE-01 — Delete an existing shift `P0` ✅
 
 **Steps:**
+
 1. Navigate to Shifts.
 2. Double-click an existing shift event.
 3. Click the **Delete** button.
@@ -127,12 +135,12 @@
 
 ---
 
-
 ## 5. Filter
 
 ### TC-SHF-FLT-01 — Filter by Employee `P1` 📋
 
 **Steps:**
+
 1. Navigate to Shifts.
 2. Open the filter panel.
 3. Select or type an employee name in the **Employee** filter.
@@ -144,6 +152,7 @@
 ### TC-SHF-FLT-02 — Filter by Position `P1` 📋
 
 **Steps:**
+
 1. Navigate to Shifts.
 2. Open the filter panel.
 3. Select a **Position** from the filter.
@@ -155,6 +164,7 @@
 ### TC-SHF-FLT-03 — Filter by Telephone `P1` 📋
 
 **Steps:**
+
 1. Navigate to Shifts.
 2. Open the filter panel.
 3. Enter a phone number in the **Telephone** filter.
@@ -166,6 +176,7 @@
 ### TC-SHF-FLT-04 — Filter by Note `P1` 📋
 
 **Steps:**
+
 1. Navigate to Shifts.
 2. Open the filter panel.
 3. Enter a keyword in the **Note** filter.
@@ -177,16 +188,17 @@
 ### TC-SHF-FLT-05 — No-match filter shows empty calendar `P1` 📋
 
 **Steps:**
+
 1. Enter a value that matches no records (e.g. `~~~NOMATCH~~~`) in any filter field.
 
 **Expected:** No shift events are displayed. The app does not crash.
 
 ---
 
-
 ### TC-SHF-FLT-06 — Combine multiple filters (AND logic) `P2` 📋
 
 **Steps:**
+
 1. Apply a filter for Employee AND Position simultaneously.
 
 **Expected:** Only shifts matching both criteria are displayed. No crash.
@@ -198,6 +210,7 @@
 ### TC-SHF-SLD-01 — Slider expands the calendar to show more days `P1` 📋
 
 **Steps:**
+
 1. Navigate to Shifts.
 2. Drag the slider to the right (toward maximum).
 
@@ -208,6 +221,7 @@
 ### TC-SHF-SLD-02 — Slider contracts the calendar to show fewer days `P1` 📋
 
 **Steps:**
+
 1. Navigate to Shifts.
 2. Drag the slider to the left (toward minimum).
 
@@ -215,12 +229,12 @@
 
 ---
 
-
 ## 7. Settings — Layers
 
 ### TC-SHF-SET-01 — Open Settings panel `P1` 📋
 
 **Steps:**
+
 1. Navigate to Shifts.
 2. Click the **Settings** button.
 
@@ -231,6 +245,7 @@
 ### TC-SHF-SET-02 — Uncheck a layer hides it from the calendar `P1` 📋
 
 **Steps:**
+
 1. Open the Settings panel.
 2. Uncheck an active layer.
 
@@ -241,6 +256,7 @@
 ### TC-SHF-SET-03 — Re-check a hidden layer restores it `P1` 📋
 
 **Steps:**
+
 1. Open the Settings panel.
 2. Uncheck a layer.
 3. Check the same layer again.
@@ -252,6 +268,7 @@
 ### TC-SHF-SET-04 — Create a new layer `P1` 📋
 
 **Steps:**
+
 1. Open the Settings panel.
 2. Click the **add layer** button.
 3. Fill in the required layer details (e.g. name).
@@ -261,10 +278,10 @@
 
 ---
 
-
 ### TC-SHF-SET-05 — Edit an existing layer `P1` 📋
 
 **Steps:**
+
 1. Open the Settings panel.
 2. Click the edit action for an existing layer.
 3. Modify the layer name or configuration.
@@ -277,6 +294,7 @@
 ### TC-SHF-SET-06 — Cancel editing a layer discards changes `P2` 📋
 
 **Steps:**
+
 1. Open the Settings panel.
 2. Click the edit action for a layer.
 3. Modify a field.
@@ -289,12 +307,12 @@
 ### TC-SHF-SET-07 — Delete an existing layer `P1` 📋
 
 **Steps:**
+
 1. Open the Settings panel.
 2. Click the delete action for an existing layer.
 3. Confirm deletion if prompted.
 
 **Expected:** The layer is removed from the list and no longer appears in the calendar.
-
 
 ## 8. Edge Cases
 
@@ -303,6 +321,7 @@
 **Where:** Filter fields (Employee, Position, Telephone, Note), shift Title, Description, layer name.
 
 **How to test:**
+
 1. Type `<script>alert(1)</script>` into any text input.
 2. Submit the form or apply the filter.
 
@@ -315,6 +334,7 @@
 **Where:** Create Shift modal, Create Layer form.
 
 **How to test:**
+
 1. Open the create form.
 2. Leave all required fields blank.
 3. Click **Save**.
@@ -328,6 +348,7 @@
 **Where:** Create Shift and Edit Shift forms (Start Time / End Time fields).
 
 **How to test:**
+
 1. Open the create or edit shift form.
 2. Set **Start Time** to a value later than **End Time** (e.g. Start: `20:00`, End: `08:00`).
 3. Click **Save**.
@@ -341,6 +362,7 @@
 **Where:** Settings → Create Layer.
 
 **How to test:**
+
 1. Create a layer with name `TestLayer`.
 2. Open the create layer form again.
 3. Enter the same name `TestLayer` and click **Save**.
@@ -354,6 +376,7 @@
 **Where:** All filter fields (Employee, Position, Telephone, Note).
 
 **How to test:**
+
 1. Type a value that cannot match any record (e.g. `~~~NOMATCH~~~`) into any filter field.
 
 **Expected:** Zero shift events are displayed on the calendar. The app does not crash or show an error. An empty-state indicator may be shown.
@@ -365,6 +388,7 @@
 **Where:** Shift Title, Description, layer name, and filter fields.
 
 **How to test:**
+
 1. Paste a string of 300+ characters into a text field.
 2. Submit the form or apply the filter.
 
@@ -377,6 +401,7 @@
 **Where:** Settings → Create / Edit Layer name field.
 
 **How to test:**
+
 1. Enter a name containing special characters, e.g. `Layer @#&%!`.
 2. Click **Save**.
 
@@ -389,6 +414,7 @@
 **Where:** The **+** (add shift) button on the Shifts calendar.
 
 **How to test:**
+
 1. Navigate to Shifts.
 2. Double-click (or click rapidly twice) the **+** button.
 
@@ -401,6 +427,7 @@
 **Where:** Create and Edit Shift forms.
 
 **How to test:**
+
 1. Open the create shift form and fill in all fields.
 2. Simulate a network interruption (e.g. disable network in browser DevTools).
 3. Click **Save**.
@@ -414,6 +441,7 @@
 **Where:** Edit Shift drawer.
 
 **How to test:**
+
 1. Open the same shift for editing in two separate browser sessions simultaneously.
 2. Edit and save in session A.
 3. Then edit and save in session B with conflicting changes.
@@ -427,6 +455,7 @@
 **Where:** Any page requiring authentication.
 
 **How to test:**
+
 1. Log in and navigate to Shifts.
 2. Let the session expire (or manually clear auth cookies).
 3. Attempt to perform any action (e.g. click **+** to add a shift).

@@ -5,8 +5,18 @@ import { ENV } from '../config/env';
 const SHIFTS_URL = `${ENV.BASE_URL}/demo/api/kic/da/index.html#/organisation/shifts`;
 
 const GERMAN_MONTHS: Record<string, number> = {
-  Januar: 1, Februar: 2, März: 3, April: 4, Mai: 5, Juni: 6,
-  Juli: 7, August: 8, September: 9, Oktober: 10, November: 11, Dezember: 12,
+  Januar: 1,
+  Februar: 2,
+  März: 3,
+  April: 4,
+  Mai: 5,
+  Juni: 6,
+  Juli: 7,
+  August: 8,
+  September: 9,
+  Oktober: 10,
+  November: 11,
+  Dezember: 12,
 };
 
 export interface ShiftFormData {
@@ -155,10 +165,7 @@ export class ShiftsPage {
   async selectShiftType(typeName: string): Promise<void> {
     await this.shiftTypeSelect.click();
     await this.dropdownList.waitFor({ state: 'visible' });
-    await this.dropdownList
-      .locator('[role="option"]', { hasText: typeName })
-      .first()
-      .click();
+    await this.dropdownList.locator('[role="option"]', { hasText: typeName }).first().click();
   }
 
   async selectResources(resources: string[]): Promise<void> {
@@ -166,10 +173,7 @@ export class ShiftsPage {
     await this.dropdownList.waitFor({ state: 'visible' });
 
     for (const resource of resources) {
-      await this.dropdownList
-        .locator('[role="option"]', { hasText: resource })
-        .first()
-        .click();
+      await this.dropdownList.locator('[role="option"]', { hasText: resource }).first().click();
     }
 
     await this.page.keyboard.press('Escape');
@@ -185,7 +189,7 @@ export class ShiftsPage {
     await this.calendarTable.waitFor({ state: 'visible' });
 
     while (true) {
-      const headerText = (await this.calendarHeaderButton.textContent() ?? '').trim();
+      const headerText = ((await this.calendarHeaderButton.textContent()) ?? '').trim();
       const [monthName, yearStr] = headerText.split(' ');
       const currentMonth = GERMAN_MONTHS[monthName] ?? 0;
       const currentYear = Number(yearStr);
@@ -193,8 +197,7 @@ export class ShiftsPage {
       if (currentYear === targetYear && currentMonth === targetMonth) break;
 
       const goForward =
-        currentYear < targetYear ||
-        (currentYear === targetYear && currentMonth < targetMonth);
+        currentYear < targetYear || (currentYear === targetYear && currentMonth < targetMonth);
 
       await (goForward ? this.calendarNextMonth : this.calendarPrevMonth).click();
     }
@@ -271,7 +274,7 @@ export class ShiftsPage {
     const thumb = this.sliderThumb;
     await thumb.focus();
 
-    const current = Number(await thumb.getAttribute('aria-valuenow') ?? 0);
+    const current = Number((await thumb.getAttribute('aria-valuenow')) ?? 0);
     const steps = targetValue - current;
     const key = steps > 0 ? 'ArrowRight' : 'ArrowLeft';
 
@@ -283,14 +286,14 @@ export class ShiftsPage {
   async moveSliderToMax(): Promise<void> {
     const thumb = this.sliderThumb;
     await thumb.focus();
-    const max = Number(await thumb.getAttribute('aria-valuemax') ?? 0);
+    const max = Number((await thumb.getAttribute('aria-valuemax')) ?? 0);
     await this.setSliderValue(max);
   }
 
   async moveSliderToMin(): Promise<void> {
     const thumb = this.sliderThumb;
     await thumb.focus();
-    const min = Number(await thumb.getAttribute('aria-valuemin') ?? 0);
+    const min = Number((await thumb.getAttribute('aria-valuemin')) ?? 0);
     await this.setSliderValue(min);
   }
 
